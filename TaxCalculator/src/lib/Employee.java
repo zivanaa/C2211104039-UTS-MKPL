@@ -60,16 +60,23 @@ public class Employee {
 	private static final double PERSENTASE_KARYAWAN_ASING = 1.5;
 
 	public void setMonthlySalary(int grade) {
-		if (grade == 1) {
-			monthlySalary = GAJI_GRADE_1;
-		} else if (grade == 2) {
-			monthlySalary = GAJI_GRADE_2;
-		} else if (grade == 3) {
-			monthlySalary = GAJI_GRADE_3;
+		switch (grade) {
+			case 1:
+				monthlySalary = 3000000;
+				break;
+			case 2:
+				monthlySalary = 5000000;
+				break;
+			case 3:
+				monthlySalary = 7000000;
+				break;
+			default:
+				monthlySalary = 0;
+				break;
 		}
 
 		if (isForeigner) {
-			monthlySalary = (int) (monthlySalary * PERSENTASE_KARYAWAN_ASING);
+			monthlySalary = (int) (monthlySalary * 1.5);
 		}
 	}
 
