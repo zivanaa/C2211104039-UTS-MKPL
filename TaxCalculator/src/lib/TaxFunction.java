@@ -41,8 +41,8 @@ public class TaxFunction {
 		int penghasilanTidakKenaPajak = PENGHASILAN_TIDAK_KENA_PAJAK_DASAR;
 
 		if (isMarried) {
-			penghasilanTidakKenaPajak += PENGHASILAN_TIDAK_KENA_PAJAK_PASANGAN
-					+ (anakUntukPotongan * PENGHASILAN_TIDAK_KENA_PAJAK_ANAK);
+			tax = (int) Math.round(0.05 * (((monthlySalary + otherMonthlyIncome) * numberOfMonthWorking) - deductible
+					- (54000000 + 4500000 + (numberOfChildren * 4500000))));
 		}
 
 		tax = (int) Math.round(TARIF_PAJAK * (totalPendapatan - deductible - penghasilanTidakKenaPajak));
