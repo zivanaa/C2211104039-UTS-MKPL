@@ -109,6 +109,7 @@ public class Employee {
 		} else {
 			monthWorkingInYear = 12;
 		}
+		
 
 		boolean sudahMenikah = spouseName != null && !spouseName.isEmpty();
 		return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible,

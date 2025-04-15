@@ -31,8 +31,8 @@ public class TaxFunction {
 
 		int tax = 0;
 
-		if (numberOfMonthWorking > BULAN_MAKSIMUM_KERJA) {
-			System.err.println("Bulan kerja melebihi 12 bulan dalam setahun");
+		if (numberOfMonthWorking > 12) {
+			throw new IllegalArgumentException("Jumlah bulan kerja tidak boleh melebihi 12");
 		}
 
 		int anakUntukPotongan = Math.min(numberOfChildren, ANAK_MAKSIMUM_UNTUK_POTONGAN);
