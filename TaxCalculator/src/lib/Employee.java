@@ -52,22 +52,22 @@ public class Employee {
 	 * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
 	 */
 	
+	private static final int GAJI_GRADE_1 = 3000000;
+	private static final int GAJI_GRADE_2 = 5000000;
+	private static final int GAJI_GRADE_3 = 7000000;
+	private static final double PERSENTASE_KARYAWAN_ASING = 1.5;
+
 	public void setMonthlySalary(int grade) {
 		if (grade == 1) {
-			monthlySalary = 3000000;
-			if (isForeigner) {
-				monthlySalary = (int) (monthlySalary * 1.5);
-			}
+			monthlySalary = GAJI_GRADE_1;
 		} else if (grade == 2) {
-			monthlySalary = 5000000;
-			if (isForeigner) {
-				monthlySalary = (int) (monthlySalary * 1.5);
-			}
+			monthlySalary = GAJI_GRADE_2;
 		} else if (grade == 3) {
-			monthlySalary = 7000000;
-			if (isForeigner) {
-				monthlySalary = (int) (monthlySalary * 1.5);
-			}
+			monthlySalary = GAJI_GRADE_3;
+		}
+
+		if (isForeigner) {
+			monthlySalary = (int) (monthlySalary * PERSENTASE_KARYAWAN_ASING);
 		}
 	}
 	
